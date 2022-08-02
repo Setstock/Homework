@@ -10,7 +10,7 @@ import random
 N = int(input("How many stick in the pile? : "))
 print("There are",N,"sticks in the pile.")
 name = str(input("What is your name? : "))
-i=0
+i=1
 while (N != 0):
     if (i%2 == 0):
         x = int(input(str(name)+" , How many stick you will take? (1 or 2 ) : "))
@@ -29,7 +29,10 @@ while (N != 0):
             elif(N):
                 print("There are",N,"Sticks in the pile.\n")
     else:
-        com = random.randint(1, 2)
+        if (i==1):
+            com = 1
+        else:
+            com = random.randint(1, 2)
         print("Conputer take : ",com)
         if(N - com < 0 ):
             print("There aren't enough sticks to take.")
