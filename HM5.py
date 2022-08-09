@@ -24,12 +24,17 @@ def findLargestNumber(x,y):
        strdata = strdata + str(data[i])
     for i in range(0,len(data2)) :
        strdata2 = strdata2 + str(data2[i])
-    data_all = [int(strdata),int(strdata2)]
-    data_all.sort()
-    data_all.reverse()
+
     strdata_all = ""
-    for i in range(0,len(data_all)) :
-       strdata_all = strdata_all + str(data_all[i])
+    if int(strdata[0]) > int(strdata2[0]):
+        strdata_all = strdata_all + strdata + strdata2
+    elif int(strdata[0]) < int(strdata2[0]):
+        strdata_all = strdata_all + strdata2 + strdata
+    elif int(strdata[0]) == int(strdata2[0]):
+        if len(strdata) > len(strdata2):
+            strdata_all = strdata_all + strdata2 + strdata
+        else:
+            strdata_all = strdata_all + strdata + strdata2
 ##    print(strdata)
     return strdata_all
  
